@@ -1,6 +1,6 @@
 class Prac2B {
 public static void main(String args[]) {
-String str = "Areeba", cipher = "QWERTY";
+String str = "kccllg", cipher = "QWERTY";
 char[] encoded = new char[str.length()];
 System.out.println("Encoded to be..");
 for (int i = 0; i < str.length(); i++) {
