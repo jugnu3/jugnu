@@ -2,7 +2,7 @@ class Prac2A
 {
 public static void main(String args[])
 {
-String input = "Good Morning! My Name is Areeba!";
+String input = "Good Morning! KC College!";
 String output = "";
 int len = input.length();
 System.out.println("Input String: " + input);
