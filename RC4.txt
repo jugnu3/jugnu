@@ -22,7 +22,7 @@ i++;
 }
 public static void main(String args[]) {
 int key[] = {1,2,3,4,5};
-String original = "Areeba Ansari";
+String original = "KC College";
 System.out.println("Value is: " + original);
 new Prac7(original,key);
 for(int i=0;i<cipher.length;i++) {
