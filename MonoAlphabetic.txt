@@ -1,0 +1,26 @@
+import java.util.*;
+class Prac1C {
+static String p = "abcdefghijklmnopqrstuvwxyz";
+static String ch = "QWERTYUIOPASDFGHJKLZXCVBNM";
+static String doEncryption(String s) {
+String c = "";
+for (int i = 0; i < s.length(); i++) {
+c += ch.charAt(p.indexOf(s.charAt(i)));
+}
+return c;
+}
+static String doDecryption(String s) {
+String c = "";
+for (int i = 0; i < s.length(); i++) {
+c += p.charAt(ch.indexOf(s.charAt(i)));
+}
+return c;
+}
+public static void main(String args[]) {
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter the message");
+String en = doEncryption(sc.next().toLowerCase());
+System.out.println("Encrypted message: " + en);
+System.out.println("Decrypted message: " + doDecryption(en));
+}
+}

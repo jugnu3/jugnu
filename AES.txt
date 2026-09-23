@@ -1,0 +1,29 @@
+import javax.crypto.*;
+import java.util.Base64;
+class Prac5 {
+SecretKey key;
+Prac5(SecretKey key) {
+this.key = key;
+}
+String Encrypt(String s) throws Exception {
+Cipher c = Cipher.getInstance("AES");
+c.init(Cipher.ENCRYPT_MODE, key);
+return Base64.getEncoder().encodeToString(c.doFinal(s.getBytes("UTF8")));
+}
+String Decrypt(String s) throws Exception {
+Cipher c = Cipher.getInstance("AES");
+c.init(Cipher.DECRYPT_MODE, key);
+return new String(c.doFinal(Base64.getDecoder().decode(s)), "UTF8");
+}
+public static void main(String args[]) throws Exception {
+System.out.println("Encrypting String Using AES Algorithm");
+SecretKey key = KeyGenerator.getInstance("AES").generateKey();
+Prac5 p = new Prac5(key);
+String s = "Areeba Ansari";
+String encrypted = p.Encrypt(s);
+String decrypted = p.Decrypt(encrypted);
+System.out.println("Original: " + s);
+System.out.println("Encrypt: " + encrypted);
+System.out.println("Decrypt: " + decrypted);
+}
+}

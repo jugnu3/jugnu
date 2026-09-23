@@ -1,0 +1,15 @@
+class Prac2B {
+public static void main(String args[]) {
+String str = "Areeba", cipher = "QWERTY";
+char[] encoded = new char[str.length()];
+System.out.println("Encoded to be..");
+for (int i = 0; i < str.length(); i++) {
+encoded[i] = (char)(str.charAt(i) ^ cipher.charAt(i));
+System.out.println(encoded[i]);
+}
+System.out.println("\nDecoded to be..");
+for (int i = 0; i < encoded.length; i++) {
+System.out.println((char)(encoded[i] ^ cipher.charAt(i)));
+}
+}
+}

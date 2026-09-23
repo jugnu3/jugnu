@@ -1,0 +1,28 @@
+import javax.crypto.*;
+import java.util.Base64;
+class Prac4 {
+SecretKey key;
+Prac4(SecretKey key) {
+this.key = key;
+}
+public String encrypt(String s) throws Exception {
+Cipher c = Cipher.getInstance("DES");
+c.init(Cipher.ENCRYPT_MODE, key);
+return Base64.getEncoder().encodeToString(c.doFinal(s.getBytes()));
+}
+public String decrypt(String s) throws Exception {
+Cipher c = Cipher.getInstance("DES");
+c.init(Cipher.DECRYPT_MODE, key);
+return new String(c.doFinal(Base64.getDecoder().decode(s)));
+}
+public static void main(String args[]) throws Exception {
+SecretKey key = KeyGenerator.getInstance("DES").generateKey();
+Prac4 p = new Prac4(key);
+String s = "Areeba Ansari";
+String enc = p.encrypt(s);
+System.out.println("Encrypting String Using DES Algorithm");
+System.out.println("Original: " + s);
+System.out.println("Encrypt: " + enc);
+System.out.println("Decrypt: " + p.decrypt(enc));
+}
+}
