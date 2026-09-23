@@ -18,7 +18,7 @@ return new String(c.doFinal(Base64.getDecoder().decode(s)));
 public static void main(String args[]) throws Exception {
 SecretKey key = KeyGenerator.getInstance("DES").generateKey();
 Prac4 p = new Prac4(key);
-String s = "Areeba Ansari";
+String s = "KC College";
 String enc = p.encrypt(s);
 System.out.println("Encrypting String Using DES Algorithm");
 System.out.println("Original: " + s);
